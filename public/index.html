@@ -10,9 +10,11 @@
 <body>
     <div class="container" ng-controller="BlogController">
     <h1>Blog</h1>
-        <input class="form-control" placeholder="text">
-        <textarea class="form-control" placeholder="body"></textarea>
-        <button ng-click="createPost()" class="btn btn-primary btn-block">Post</button>
+        <input ng-model="post.title" class="form-control" placeholder="text">
+        <textarea ng-model="post.body" class="form-control" placeholder="body"></textarea>
+        <button ng-click="createPost(post)" class="btn btn-primary btn-block">Post</button>
+
+        {{ posts }}
     </div>
 </body>
 </html>

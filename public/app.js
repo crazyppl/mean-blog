@@ -3,11 +3,25 @@
         .module("BlogApp", [])
         .controller("BlogController", BlogController);
     
-    function BlogController($scope) {
+    function BlogController($scope, $http) {
         $scope.createPost = createPost;
+
+        function init() {
+            getAllPosts();
+        }
+        init();
         
-        function createPost() {
-            console.log("createPost");
+        function getAllPosts() {
+            $http
+                .get("/api/blogpost")
+                .then(function (posts) {
+                    $scope.posts = posts;
+                });
+        }
+        
+        function createPost(post) {
+            console.log(post);
+            $http.post("/api/blogpost", post);
         }
 
     }
