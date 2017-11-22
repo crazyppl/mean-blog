@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
+var multer = require('multer');
 var mongoose = require('mongoose');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
@@ -19,6 +20,7 @@ var PostModel = mongoose.model("PostModel", PostSchema);
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(multer());
 app.use(session({ secret: 'this is the secret' }));
 app.use(cookieParser());
 app.use(passport.initialize());
