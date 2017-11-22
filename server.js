@@ -2,6 +2,9 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var cookieParser = require('cookie-parser');
+var session = require('express-session');
+var passport = require('passport');
 mongoose.connect('mongodb://localhost/meanblog2017', { useMongoClient: true });
 
 var PostSchema = mongoose.Schema({
@@ -16,7 +19,10 @@ var PostModel = mongoose.model("PostModel", PostSchema);
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
+app.use(session({ secret: 'this is the secret' }));
+app.use(cookieParser());
+app.use(passport.initialize());
+app.use(passport.session());
 app.post("/api/blogpost", createPost);
 app.get("/api/blogpost", getAllPosts);
 app.get("/api/blogpost/:id", getPostById);
