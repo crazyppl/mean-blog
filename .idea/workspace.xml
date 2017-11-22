@@ -240,7 +240,7 @@
       <workItem from="1510819010774" duration="7601000" />
       <workItem from="1511070992901" duration="6214000" />
       <workItem from="1511328339025" duration="2318000" />
-      <workItem from="1511351864841" duration="425000" />
+      <workItem from="1511351864841" duration="464000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;finished 60&quot;">
       <created>1510748623369</created>
@@ -284,11 +284,18 @@
       <option name="project" value="LOCAL" />
       <updated>1511352243020</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="&quot;gitignore added&quot;">
+      <created>1511352294677</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1511352294677</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25901000" />
+    <option name="totallyTimeSpent" value="25940000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
