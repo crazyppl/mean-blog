@@ -1,7 +1,19 @@
 (function () {
     angular
-        .module("BlogApp", [])
-        .controller("BlogController", BlogController);
+        .module("BlogApp", ['ngRoute'])
+        .controller("BlogController", BlogController)
+        .config(function($routeProvider, $locationProvider) {
+            $routeProvider
+                .when('/', {
+                    templateUrl: '/views/home.html',
+
+                })
+                .when('/profile', {
+                    templateUrl: '/views/profile.html',
+                })
+                .when('/login', {
+                    templateUrl: '/views/login.html',
+                });
     
     function BlogController($scope, $http) {
         $scope.createPost = createPost;
